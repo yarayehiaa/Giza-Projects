@@ -1,0 +1,43 @@
+main{
+    padding-top: 2.813rem;
+    padding-left: 2.25rem;
+    h1{
+        @include text(2rem, 'bold', 2.4rem);
+        margin-bottom: 1rem;
+    }
+    p{
+        @include text(1.5rem, 'reg', 1.956rem);
+        margin-bottom: 1.875rem;
+    }
+
+    form{
+        @include structure(row, center, center);
+        margin-bottom: 3.75rem;
+        gap:2.5rem;
+       
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        th, td{
+            padding: 2.125rem;
+            text-align: left;
+        }
+        th{
+            background-color: map-get($colors, 'white' );
+           img{
+            vertical-align: bottom;
+           }
+        }
+        tr:nth-child(odd){
+            background-color: #F6F6F6;
+        }
+        td{
+            img{
+                margin-right:0.662rem;
+            }
+        }
+    }
+
+    }
+

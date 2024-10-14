@@ -1,0 +1,47 @@
+$colors: ('white':#fff,'black':#000,'purple':#4F008C,'dark-purple':#420374,'coral':#FF375E,
+'grey':#F3F3F1,'grey-text': #8E9AA0,'dark-grey':#D8D8D833,'grey-row':#F6F6F6,
+);
+
+ @font-face {
+        font-family: STC_bold;
+        src: url('../assets/font/STC_Bold.woff');
+    }
+
+    @font-face {
+        font-family: STC_regular;
+        src: url('../assets/font/STC_Regular.woff');
+    }
+
+    @font-face {
+        font-family: STC_medium;
+        src: url('../assets/font/STC_Medium.woff');
+    }
+
+    $fonts:( 'bold': 'STC_bold', 'reg': 'STC_regular', 'med': 'STC_medium');
+
+
+
+@each $name, $color in $colors {
+    .#{$name} {
+      color: $color;
+    }
+  }
+
+  @each $name, $color in $colors {
+    .#{$name}-bg {
+      background-color: $color;
+    }
+  }
+
+@mixin structure($flex-direction, $justify-content:stretch, $align-items:center){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin text($font-size, $font-weight, $line-height) {
+    font-size: $font-size;
+    font-family: map-get($fonts, $font-weight );
+    line-height: $line-height;
+}
