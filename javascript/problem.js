@@ -1,8 +1,8 @@
 function myFunc(string){
-    if(string.length <= 3) {
-        return 'String is too short';
-    }
-    return string.slice(-3)+string+string.slice(-3);
+   
+
+   let msg=  (string.length <= 3) ? 'String is too short' : string.slice(-3)+string+string.slice(-3);
+   return msg
 
 }
 console.log(myFunc('swift'));
