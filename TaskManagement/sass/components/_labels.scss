@@ -1,0 +1,21 @@
+#labels {
+  ul {
+    :last-child {
+        border-bottom: 0;
+      }
+    li {
+      @include structure(row, stretch, flex-start);
+      gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid #f5f5f5;
+    
+      .container {
+        .checkmark {
+          border-radius: 10%;
+          margin-top:-0.5rem;
+        }
+      }
+    }
+    
+  }
+}

@@ -1,0 +1,16 @@
+#illustration{
+    gap:1rem;
+
+    h4{
+        @include text(0.8rem, 500, 0.625rem);
+        padding: 0.2rem;
+    }
+    .cardfooter{
+        @include structure(row, flex-start, center);
+        gap:0.5rem;
+        p+img{
+            margin-left:0.5rem;
+        }
+    }
+
+}

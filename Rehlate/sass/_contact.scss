@@ -1,0 +1,84 @@
+.contact {
+  text-align: right;
+  margin: 0 1.25rem;
+  @include structure(column, center, center);
+
+  .contact-form {
+    form {
+      @include structure(column, center, stretch);
+      gap: 1.5rem;
+      padding: 2.75rem 1.25rem;
+      border-radius: 25px;
+      border: 1.5px solid map-get($colors, "black");
+      box-shadow: 10px 10px 0px 0px #000000;
+      margin-bottom: 3.5rem;
+      button {
+        @include button(
+          map-get($colors, "white"),
+          map-get($colors, "black"),
+          1px solid map-get($colors, "black")
+        );
+      }
+      span {
+        @include structure(column, center, stretch);
+        gap: 0.875rem;
+        input {
+          padding: 1rem 0.75rem;
+          border: 1px solid map-get($colors, "black");
+          border-radius: 15px;
+          text-align: right;
+        }
+        textarea {
+          padding: 1rem 0.75rem;
+          border: 1px solid map-get($colors, "black");
+          border-radius: 15px;
+          text-align: right;
+        }
+      }
+    }
+  }
+  ul {
+    margin-bottom: 4.75rem;
+    li {
+      text-align: center;
+      @include structure(column, center, center);
+      gap: 1.25rem;
+      h5{
+        @include text(1.25rem, 900, 1.25rem);
+      }
+      p{
+        @include text(1rem, 300, 1.25rem);
+        font-family: 'Lama Sans-thin';
+       
+    }
+    }
+    li+li{
+        margin-top: 2.5rem;
+    }
+  }
+  @media screen and (min-width: 75rem) {
+    @include structure(column, stretch, flex-end);
+    margin: 0 3.75rem;
+    >div{
+      
+
+      @include structure(row-reverse, stretch, flex-start);
+      gap: 4rem;
+      .contact-form {
+        flex:6;
+        
+      }
+      ul{
+        flex:4;
+        li{
+          @include structure(row-reverse, center, center);
+          text-align: right;
+          h5{
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+   
+  }
+}

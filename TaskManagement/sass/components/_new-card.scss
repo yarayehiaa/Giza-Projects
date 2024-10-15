@@ -1,0 +1,90 @@
+#new-card {
+  align-items: stretch;
+  text-wrap: nowrap;
+    //dropdown
+
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  button {
+    border: 0;
+    background-color: transparent;
+    width: min-content;
+    align-self: flex-end;
+  }
+
+  form {
+    h2{
+      margin-bottom: 0;
+    }
+
+   @include structure(column, flex-start, stretch);
+   @include text(10px, 500, 23px);
+    gap: 1rem;
+    #card-title {
+      border: 1px solid map-get($colors, 'blue');
+      border-radius: 8px;
+      padding: 0.5rem;
+      padding-bottom: 9.375rem;
+      margin-bottom: 0.5rem;
+      &:hover {
+        border: 1px solid map-get($colors, 'aqua');
+      }
+    }
+    ul{
+        li{
+            display: flex;
+            gap:0.75rem;
+            align-items: center;
+            .adder{
+                margin-left: auto;
+
+            }
+           
+            hr{
+                height: 1px;
+                width: 100%;
+                background-color: map-get($colors, 'grey');
+                opacity: 0.6;
+            }
+            
+          
+        }
+        li+li{
+            margin-top: 0.5rem;
+        }
+    }
+    input[type="submit"] {
+        padding:0.4rem 5rem;
+        border-radius: 8px;
+        background-color: map-get($colors, 'blue');
+        border:0;
+        margin-top: 0.5rem;
+    }
+  }
+  @media (min-width: 756px) {
+    form {
+      @include text(1rem, 500, 1.5rem);
+      #card-title {
+       @include text(1rem, 500, 1.5rem);
+      }
+  
+    }
+  }
+}

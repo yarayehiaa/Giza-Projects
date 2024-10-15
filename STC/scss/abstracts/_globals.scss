@@ -1,0 +1,29 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: map-get($fonts, 'reg' );
+}
+.body {
+  font-size: 16px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: map-get($colors, 'white');
+  
+}
+.inline {
+  @include structure(row,stretch,stretch);
+  flex-wrap: nowrap;
+
+}
+
+.left {
+  margin-left: auto !important;
+}
+
+
