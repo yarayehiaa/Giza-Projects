@@ -1,0 +1,29 @@
+nav{
+    background-color: map-get($colors, 'purple' );
+    @include structure(row, space-between, center);
+    margin-bottom: 0.313rem;
+    >img{
+        margin-left: 2rem;
+        width: 5.25rem;
+    }
+    ul{
+        @include structure(row, flex-start, stretch);
+        gap: 1rem;
+      
+        li{
+            @include text(0.813rem, 'bold', 0.969rem);
+            @include structure(row, stretch, center);
+            padding: 1.2rem 0.5rem;
+            cursor: pointer;
+            a{
+                @include structure(row, stretch, center);
+                gap:0.625rem;
+                color: map-get($colors, 'white');
+            }
+        }
+        li+li{
+            border-left: 0.313rem solid map-get($colors, 'white');
+            
+        }
+    }
+}

@@ -1,0 +1,19 @@
+$colors: ('white':#fff,'black':#000,'grey':#F5F5F2,'grey-border':#EAF1F3,'grey-heading':#102C38);
+
+@font-face {
+  font-family: 'FiraSans';
+  src: url('../font/FiraSans-Regular.ttf') format('truetype');
+}
+
+
+@each $name, $color in $colors {
+    .#{$name} {
+      color: $color;
+    }
+  }
+
+  @each $name, $color in $colors {
+    .#{$name}-bg {
+      background-color: $color;
+    }
+  }

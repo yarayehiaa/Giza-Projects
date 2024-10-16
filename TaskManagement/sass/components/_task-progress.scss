@@ -1,0 +1,48 @@
+#task-progress{
+
+    .inline{
+        p{
+            @include text(0.7rem, 500, 1rem);
+            margin-bottom: 1rem;
+            @media (min-width: 756px) {
+                @include text(1.25rem, 500, 1.875rem);
+              }
+        }
+    }
+    
+        ul {
+        li:nth-child(1){
+            .background{
+                background:map-get($colors, 'purple-shadow' );
+            }
+            .bar{
+                background: map-get($colors, 'purple' );
+                max-width: 37.5%;
+                
+            }
+           
+        }
+        li:nth-child(2){
+            .background{
+                background:map-get($colors, 'green-shadow' );
+            }
+            .bar{
+                background: map-get($colors, 'green' );
+                max-width: 60%;
+            }
+           
+        }
+        li:nth-child(3){
+            .background{
+                background:map-get($colors, 'blue-shadow' );
+            }
+            .bar{
+                background: map-get($colors, 'aqua' );
+                max-width: 28%;
+            }
+            
+        }
+    }
+
+
+}

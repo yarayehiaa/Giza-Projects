@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "FiraSans";
+  src: url("../font/FiraSans-Regular.ttf") format("truetype");
+}
+.white {
+  color: #fff;
+}
+
+.black {
+  color: #000;
+}
+
+.grey {
+  color: #F5F5F2;
+}
+
+.grey-border {
+  color: #EAF1F3;
+}
+
+.grey-heading {
+  color: #102C38;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.black-bg {
+  background-color: #000;
+}
+
+.grey-bg {
+  background-color: #F5F5F2;
+}
+
+.grey-border-bg {
+  background-color: #EAF1F3;
+}
+
+.grey-heading-bg {
+  background-color: #102C38;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "FiraSans";
+}
+
+.body {
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+table {
+  margin: 20% auto;
+  padding: 1rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+table tr th {
+  color: rgba(16, 44, 56, 0.5);
+  padding: 1rem;
+  text-align: left;
+}
+table tr td {
+  width: 16.6%;
+  padding: 1rem;
+  color: #102C38;
+}
+table tr button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+table tr + tr {
+  border-top: 1px solid #EAF1F3;
+}/*# sourceMappingURL=styles.css.map */
