@@ -1,0 +1,28 @@
+table{
+    margin:20% auto;
+    padding:1rem;
+    border-collapse:collapse;
+    table-layout: fixed;
+    @include text(14px,400,21px);
+    tr{
+        th{
+            color:rgba($color:map-get($colors, 'grey-heading'), $alpha: 0.5);
+            padding:1rem;
+            text-align: left;
+        }
+        td{
+            width: 16.6%;
+            padding:1rem;
+            color:map-get($colors, 'grey-heading');
+        }
+        button{
+            background-color:transparent;
+            border:none;
+            cursor:pointer;
+        }
+       
+    }
+    tr+tr{
+        border-top:1px solid map-get($colors, 'grey-border');
+    }
+}
