@@ -10,6 +10,7 @@
 
 <body class="grey-bg">
     <table id="table" class="white-bg">
+        <thead>
         <tr>
             <th></th>
             <th>Name</th>
@@ -18,7 +19,32 @@
             <th class="right">Cart</th>
             <th></th>
         </tr>
+        </thead>
+     
+        <tbody id="table-body">
+       
+        </tbody>
     </table>
+
+    <div id="editModal" class="modal">
+
+        <div class="modal-content">
+          <span class="close">&times;</span>
+            <h2 class="green">Edit User</h2>
+            <form id="editForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company">
+                <label for="user">User picture:</label>
+                <input type="file" id="user" name="user">
+                <label for="cart">Cart:</label>
+                <input type="text" id="cart" name="cart">
+                <button type="button" id="formBtn">Edit</button>
+            </form>
+        </div>
+      
+      </div>
 
     <script src="easyTable.js"></script>
 </body>

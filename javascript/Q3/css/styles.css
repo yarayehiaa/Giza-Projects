@@ -22,6 +22,14 @@
   color: #102C38;
 }
 
+.green {
+  color: #357860;
+}
+
+.shadow {
+  color: rgba(36, 20, 82, 0.1490196078);
+}
+
 .white-bg {
   background-color: #fff;
 }
@@ -40,6 +48,14 @@
 
 .grey-heading-bg {
   background-color: #102C38;
+}
+
+.green-bg {
+  background-color: #357860;
+}
+
+.shadow-bg {
+  background-color: rgba(36, 20, 82, 0.1490196078);
 }
 
 * {
@@ -84,9 +100,16 @@ table {
   padding: 1rem;
   border-collapse: collapse;
   table-layout: fixed;
-  font-size: 14px;
+  box-shadow: 0 0.25rem 0.75rem 0 rgba(36, 20, 82, 0.1490196078);
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 21px;
+  line-height: 1.313rem;
+}
+table thead {
+  border-top: 1px solid #EAF1F3;
+}
+table tr {
+  border-top: 1px solid #EAF1F3;
 }
 table tr th {
   color: rgba(16, 44, 56, 0.5);
@@ -103,6 +126,52 @@ table tr button {
   border: none;
   cursor: pointer;
 }
-table tr + tr {
-  border-top: 1px solid #EAF1F3;
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 30%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 1rem 1rem rgba(36, 20, 82, 0.1490196078);
+}
+.modal .modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 1.25rem;
+  border: 1px solid #000;
+  width: 80%;
+}
+.modal .modal-content .close {
+  color: #357860;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.modal .modal-content .close:hover,
+.modal .modal-content .close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.modal .modal-content form label {
+  color: rgba(16, 44, 56, 0.5);
+  margin-top: 1rem;
+}
+.modal .modal-content form #formBtn {
+  margin-top: 1rem;
+  background-color: #357860;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
