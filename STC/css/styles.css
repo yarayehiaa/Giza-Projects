@@ -1,0 +1,364 @@
+@font-face {
+  font-family: STC_bold;
+  src: url("../assets/font/STC_Bold.woff");
+}
+@font-face {
+  font-family: STC_regular;
+  src: url("../assets/font/STC_Regular.woff");
+}
+@font-face {
+  font-family: STC_medium;
+  src: url("../assets/font/STC_Medium.woff");
+}
+.white {
+  color: #fff;
+}
+
+.black {
+  color: #000;
+}
+
+.purple {
+  color: #4F008C;
+}
+
+.dark-purple {
+  color: #420374;
+}
+
+.coral {
+  color: #FF375E;
+}
+
+.grey {
+  color: #F3F3F1;
+}
+
+.grey-text {
+  color: #8E9AA0;
+}
+
+.dark-grey {
+  color: rgba(216, 216, 216, 0.2);
+}
+
+.grey-row {
+  color: #F6F6F6;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.black-bg {
+  background-color: #000;
+}
+
+.purple-bg {
+  background-color: #4F008C;
+}
+
+.dark-purple-bg {
+  background-color: #420374;
+}
+
+.coral-bg {
+  background-color: #FF375E;
+}
+
+.grey-bg {
+  background-color: #F3F3F1;
+}
+
+.grey-text-bg {
+  background-color: #8E9AA0;
+}
+
+.dark-grey-bg {
+  background-color: rgba(216, 216, 216, 0.2);
+}
+
+.grey-row-bg {
+  background-color: #F6F6F6;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "STC_regular";
+}
+
+.body {
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.left {
+  margin-left: auto !important;
+}
+
+nav {
+  background-color: #4F008C;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.313rem;
+}
+nav > img {
+  margin-left: 2rem;
+  width: 5.25rem;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1rem;
+}
+nav ul li {
+  font-size: 0.813rem;
+  font-family: "STC_bold";
+  line-height: 0.969rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  padding: 1.2rem 0.5rem;
+  cursor: pointer;
+}
+nav ul li a {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  gap: 0.625rem;
+  color: #fff;
+}
+nav ul li + li {
+  border-left: 0.313rem solid #fff;
+}
+
+aside {
+  background-color: #4F008C;
+  width: 15%;
+  font-size: 0.813rem;
+  font-family: "STC_regular";
+  line-height: 1.063rem;
+}
+aside ul {
+  padding-top: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2.125rem;
+}
+aside ul li {
+  padding: 0.438rem 1.875rem;
+}
+aside ul li:hover {
+  background-color: #420374;
+  border-left: 0.313rem solid #FF375E;
+  font-family: "STC_bold";
+}
+
+main {
+  padding-top: 2.813rem;
+  padding-left: 2.25rem;
+}
+main h1 {
+  font-size: 2rem;
+  font-family: "STC_bold";
+  line-height: 2.4rem;
+  margin-bottom: 1rem;
+}
+main p {
+  font-size: 1.5rem;
+  font-family: "STC_regular";
+  line-height: 1.956rem;
+  margin-bottom: 1.875rem;
+}
+main form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.75rem;
+  gap: 2.5rem;
+}
+main table {
+  width: 100%;
+  border-collapse: collapse;
+}
+main table th, main table td {
+  padding: 2.125rem;
+  text-align: left;
+}
+main table th {
+  background-color: #fff;
+}
+main table th img {
+  vertical-align: bottom;
+}
+main table tr:nth-child(odd) {
+  background-color: #F6F6F6;
+}
+main table td img {
+  margin-right: 0.662rem;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(216, 216, 216, 0.2);
+  border-bottom: 0.188rem solid #8E9AA0;
+}
+.search-container input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-left: 0.75rem;
+  padding-right: 7.875rem;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown .dropbtn {
+  display: flex;
+  border: none;
+  background-color: rgba(216, 216, 216, 0.2);
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "STC_bold";
+  line-height: 1.2rem;
+}
+.dropdown .dropbtn img {
+  margin-left: 11rem;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  right: 0;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.switch {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.switch-button {
+  /* background and border when in "off" state */
+  background: #FF375E;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 5rem;
+  position: relative;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.switch-input:not(:checked) + .switch-button .switch-button-left {
+  /* text color when in "off" state */
+  color: black;
+}
+
+.switch-input {
+  display: none;
+}
+
+.switch-button span {
+  font-size: 1rem;
+  font-family: "STC_medium";
+  line-height: 1.2rem;
+  padding: 0.375rem 1rem;
+  text-align: center;
+  z-index: 2;
+  color: #FFFFFF;
+  transition: color 0.2s;
+}
+
+.switch-button::before {
+  content: "";
+  position: absolute;
+  background-color: #F3F3F1;
+  border-radius: 5rem 0 0 5rem;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1), padding 0.2s ease, margin 0.2s ease;
+}
+
+.switch-button:hover::before {
+  will-change: padding;
+}
+
+.switch-button:active::before {
+  padding-right: 0.4rem;
+}
+
+/* "On" state
+   ========================== */
+.switch-input:checked + .switch-button {
+  /* background and border when in "off" state */
+  background-color: #FF375E;
+  border-color: var(--links);
+}
+
+.switch-input:checked + .switch-button .switch-button-right {
+  /* text color when in "off" state */
+  color: black;
+}
+
+.switch-input:checked + .switch-button::before {
+  left: 50%;
+  transform: rotate(180deg);
+}
+
+.switch-input:checked + .switch-button:active::before {
+  margin-left: -0.4rem;
+}
+
+/* Checkbox in disabled state
+   ========================== */
+.switch-input[type=checkbox]:disabled + .switch-button {
+  opacity: 0.6;
+  cursor: not-allowed;
+}/*# sourceMappingURL=styles.css.map */

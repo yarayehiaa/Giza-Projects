@@ -1,0 +1,42 @@
+#navbar {
+  @include structure(row, stretch, center);
+  margin: 1rem;
+  margin-bottom: 0;
+  padding: 0.5rem;
+  &:hover {
+    transform: none;
+  }
+
+  h2 {
+    margin: 0 !important;
+  }
+
+  span {
+    background-color: map-get($colors, "aqua");
+    border-radius: 50%;
+    border: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    margin-right: 0.5rem;
+    @include structure(row, center, center);
+  }
+  @media (min-width: map-get($breakpoints, md)) {
+    ul {
+      @include text(0.8rem, 500, 1.2rem);
+      @include structure(row, space-between, center);
+      gap: 1rem;
+      margin: 0 3rem;
+      li:hover {
+        color: map-get($colors, "aqua");
+        cursor: pointer;
+      }
+    }
+    h2{
+        @include text(0.8rem, 500, 1.2rem); 
+    }
+    .search-container{
+        margin-left: 2rem;
+    }
+  }
+}

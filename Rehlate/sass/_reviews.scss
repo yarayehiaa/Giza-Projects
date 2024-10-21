@@ -1,0 +1,42 @@
+.Reviews {
+  text-align: center;
+  margin: 0 1.25rem;
+  margin-bottom: 4.75rem;
+
+  .reviews-cards {
+    @include structure(column, center, center);
+    gap: 2rem;
+    .review-card {
+      border-radius: 25px;
+      padding: 2rem 1.25rem;
+      @include structure(column, center, flex-end);
+      gap: 1.125rem;
+      h5 {
+        @include text(1.25rem, 900, 1.25rem);
+      }
+      p {
+        text-align: right;
+        font-family: "Lama Sans-thin";
+        @include text(1rem, 300, 1.6rem);
+      }
+    }
+  }
+  @media screen and (min-width: 75rem) {
+    margin: 0 3.75rem;
+    .reviews-cards {
+      @include structure(row-reverse, stretch, center);
+      gap: 1.5rem;
+      p{
+        @include text(1.125rem, 100, 1.75rem);
+      }
+    }
+    .desktop{
+      @include structure(row, center, center);
+      button{
+        background-color: transparent;
+        border:0;
+        gap:1.5rem;
+      }
+    }
+  }
+}

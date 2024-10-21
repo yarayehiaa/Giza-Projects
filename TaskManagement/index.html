@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task Management">
+    <title>Task Management Dashboard</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="card " id="navbar">
+                <div class="inline">
+                    <span class="white">T</span>
+                    <h2 class="aqua">TASK</h2>
+                </div>
+                <div class="search-container">
+                    <img src="./assets/icons/search.svg" alt="search">
+                    <input type="text" placeholder="Search everything">
+                </div>
+                <ul class="inline opacity-6 desktop">
+                    <li class="active">Projects</li>
+                    <li>Settings</li>
+                    <li>help</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="grid-container">
+
+        <div class="sector">
+            <div class="card " id="new-card">
+                <button>
+                    <img src="./assets/navigators/close_small.svg" alt="plus icon">
+                </button>
+                <form>
+                    <label for="card-title">
+                        <h2>Create new card</h2>
+                    </label>
+                    <input type="text" id="card-title" name="card-title" placeholder="What is the task?">
+                    <ul>
+                        <li>
+                            <img src="./assets/icons/tag.svg" alt="tag icon">
+                            <span class="aquaspan ">
+                                <p class="text-blue">UI Design</p>
+                            </span>
+                            <button class="left dropdown" disabled>
+                                <img src="./assets/icons/add-icon.svg" alt="add icon" class="adder">
+                                <div class="dropdown-content">
+                                    <ul>
+                                        <li>Copywriting</li>
+                                        <li>Illustration</li>
+                                        <li>Labeling</li>
+                                    </ul>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <hr>
+                        </li>
+                        <li class="black">
+                            <img src="./assets/icons/person.svg" alt="tag icon">
+                            <img src="./assets/users/Samantha-william.svg" alt="profile picture" class="profilepic">
+                            <p class="opacity-6">Samantha</p>
+                            <button class="left dropdown" disabled>
+                                <img src="./assets/icons/add-icon.svg" alt="add icon" class="adder">
+                                <div class="dropdown-content">
+                                    <ul>
+                                        <li> <img src="./assets/users/Karen-William.svg" class="profilepic">Karen
+                                            William</li>
+                                        <li><img src="./assets/users/Angela-Smith.svg" class="profilepic">Angela Smith
+                                        </li>
+                                        <li><img src="./assets/users/Andy-Hope.svg" class="profilepic">Andy Hope</li>
+                                    </ul>
+
+                                </div>
+                            </button>
+                        </li>
+                    </ul>
+                    <input type="submit" value="Done" class="white">
+                </form>
+            </div>
+            <div class="block">
+                <div class="card span-12 lg-span-3 md-span-5 " id="dropdown">
+                    <img src="./assets/icons/person.svg" alt="add person icon">
+                    <p class="black">Assign project to</p>
+                    <div class="dropdown">
+                        <button class="dropbtn"><img src="./assets/navigators/chevron_down.svg"
+                                alt="dropdown button"></button>
+                        <div class="dropdown-content card">
+                            <div class="search-container">
+                                <img>
+                                <input type="text" placeholder="Search">
+                            </div>
+                            <div class="dropdown-item">
+                                <img src="./assets/users/Angela-Smith.svg" alt="profile picture" class="profilepic">
+                                <h4 class="black">Angela Smith</h4>
+                                <p class="subtext">16 task on progress</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <img src="./assets/users/Karen-William.svg" alt="profile picture" class="profilepic">
+                                <h4 class="black">Karen William</h4>
+                                <p class="subtext">25 task on progress</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <img src="./assets/users/Samantha-william.svg" alt="profile picture" class="profilepic">
+                                <h4 class="black">Samantha William</h4>
+                                <p class="subtext">35 task on progress</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <img src="./assets/users/Andy-Hope.svg" alt="profile picture" class="profilepic">
+                                <h4 class="black">Andy Hope</h4>
+                                <p class="subtext">12 task on progress</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card span-12 lg-span-3 md-span-4" id="homepage">
+
+
+                    <img src="./assets/navigators/ellipses.svg" alt="edit icon" class="left">
+                    <h2>Konsep design homepage</h2>
+
+                    <div class="inline">
+                        <img src="./assets/icons/flag.svg">
+                        <p>Due Nov 24</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <div class="inline">
+                        <h4>Project Progress</h4>
+                        <p class="left">32%</p>
+                    </div>
+                    <div>
+                        <div class="wrapper">
+                            <div class="bar"></div>
+                            <div class="background"></div>
+                        </div>
+                        <img class="sizing"
+                            src="https://musiclab-public.s3.ap-northeast-2.amazonaws.com/sample/32B1FEE8-0D7F-4BFA-9DB1-63F748932371_1_105_c.jpeg"
+                            alt="" />
+                    </div>
+                    <div class="project-assignees inline">
+                        <img src="./assets/users/Angela-Smith.svg" alt="profile picture" class="profilepic">
+                        <img src="./assets/users/Samantha-william.svg" alt="profile picture" class="profilepic">
+                        <img src="./assets/users/Karen-William.svg" alt="profile picture" class="profilepic">
+                        <p> + 15 people</p>
+                        <img src="./assets/icons/add-icon.svg" alt="plus icon" class="left">
+                    </div>
+                </div>
+
+            </div>
+            <div class="card " id="weekly-progress">
+                <div class="inline">
+                    <h2>Weekly Progress</h2>
+                    <img src="./assets/navigators/ellipses.svg" alt="edit icon">
+                </div>
+                <p class="subtext opacity-6">Start from Nov 7-14, 2020</p>
+                <div class="progress-bar">
+                    <svg width="200" height="200" viewBox="0 0 200 200" class="circular-progress">
+                        <circle class="bg"></circle>
+                        <circle class="fg"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <p class="green" id="percentage">75%</p>
+                        <p class="opacity-6">Tasks Completed</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card " id="tasks">
+                <h2>Tasks</h2>
+                <ul>
+                    <li>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div>
+                            <p>Design Homepage</p>
+                            <p class="subtext">Thu, Nov 23</p>
+                        </div>
+                        <img src="./assets/users/Angela-Smith.svg" alt="profile picture" class="profilepic left">
+                    </li>
+                    <li>
+                        <label class="container">
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div>
+                            <p>Sketsa Ilustrasi</p>
+                            <p class="subtext">Mon, Nov 15</p>
+                        </div>
+                        <img src="./assets/users/Karen-William.svg" alt="profile picture" class="profilepic left">
+                    </li>
+                    <li>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div>
+                            <p>Onboarding Design</p>
+                            <p class="subtext">Wed, Nov 15</p>
+                        </div>
+                        <img src="./assets/users/Samantha-william.svg" alt="profile picture" class="profilepic left">
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="sector">
+
+            <div class="block">
+
+
+                <div class="card " id="illustration">
+                    <div class="inline">
+                        <span class="aquaspan ">
+                            <h4 class="text-blue">illustration</h4>
+                        </span>
+                        <img src="./assets/navigators/ellipses.svg" alt="edit icon">
+                    </div>
+                    <p>Membuat konsep ilustrasi untuk halaman homepage dan about us</p>
+                    <div class="cardfooter">
+                        <img src="./assets/icons/flag.svg">
+                        <p class="opacity-5">Nov 24</p>
+                        <img src="./assets/icons/comments.svg">
+                        <p class="opacity-5">2</p>
+                        <img src="./assets/users/Karen-William.svg" alt="profile picture" class="profilepic left">
+                    </div>
+                </div>
+                <div class="card " id="labels">
+                    <div class="inline">
+                        <h2>Labels</h2>
+                        <img src="./assets/navigators/ellipses.svg" alt="edit icon">
+                    </div>
+                    <ul>
+                        <li>
+                            <img src="./assets/icons/tag.svg">
+                            Copywriting
+                            <label class="container left">
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <img src="./assets/icons/tag.svg">
+                            UI Design
+                            <label class="container left">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <img src="./assets/icons/tag.svg">
+                            Illustration
+                            <label class="container left">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="card " id="recent-activity">
+                <h2>Recent Activity</h2>
+                <ul>
+                    <li>
+                        <img src="./assets/icons/comments-green.svg" alt="comments icon">
+                        <div>
+                            <p><span class="bold">Karen </span>leave some comments on Konsep Ilustrasi</p>
+                            <p class="subtext opacity-5">Aug 10</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/icons/edit-purple.svg" alt="edit icon">
+                        <div>
+                            <p><span class="bold">Karen </span>change project info on Project Homepage</p>
+                            <p class="subtext opacity-5">Aug 10</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/icons/flag-yellow.svg" alt="flag icon">
+                        <div>
+                            <p><span class="bold">Andrea </span>change the due date of Project Homepage</p>
+                            <p class="subtext opacity-5">Aug 10</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card " id="task-progress">
+                <h2>Task Progress</h2>
+                <ul>
+                    <li>
+                        <div class="inline">
+                            <p>Copywriting</p>
+                            <p class="opacity-5">3/8</p>
+                        </div>
+                        <div>
+                            <div class="wrapper">
+                                <div class="bar"></div>
+                                <div class="background"></div>
+                            </div>
+                            <img class="sizing"
+                                src="https://musiclab-public.s3.ap-northeast-2.amazonaws.com/sample/32B1FEE8-0D7F-4BFA-9DB1-63F748932371_1_105_c.jpeg"
+                                alt="" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inline">
+                            <p>Illustrations</p>
+                            <p class="opacity-5">6/10</p>
+                        </div>
+                        <div>
+                            <div class="wrapper">
+                                <div class="bar"></div>
+                                <div class="background"></div>
+                            </div>
+                            <img class="sizing"
+                                src="https://musiclab-public.s3.ap-northeast-2.amazonaws.com/sample/32B1FEE8-0D7F-4BFA-9DB1-63F748932371_1_105_c.jpeg"
+                                alt="" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inline">
+                            <p>UI Design</p>
+                            <p class="opacity-5">2/7</p>
+                        </div>
+                        <div>
+                            <div class="wrapper">
+                                <div class="bar"></div>
+                                <div class="background"></div>
+                            </div>
+                            <img class="sizing"
+                                src="https://musiclab-public.s3.ap-northeast-2.amazonaws.com/sample/32B1FEE8-0D7F-4BFA-9DB1-63F748932371_1_105_c.jpeg"
+                                alt="" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card " id="file-attachment">
+                <h2>File Attachment</h2>
+                <ul>
+                    <li class="inline">
+                        <img src="./assets/icons/pdf.svg" alt="attachment icon">
+                        <div class="col">
+                            <div class="inline">
+                                <p>User-Journey.pdf</p>
+                                <p>4.5MB</p>
+                                <button>Cancel</button>
+                            </div>
+                            <div>
+                                <div class="wrapper">
+                                    <div class="bar">
+                                    </div>
+                                    <div class="background">
+                                    </div>
+                                </div>
+                                <img class="sizing"
+                                    src="https://musiclab-public.s3.ap-northeast-2.amazonaws.com/sample/32B1FEE8-0D7F-4BFA-9DB1-63F748932371_1_105_c.jpeg"
+                                    alt="" />
+                            </div>
+                        </div>
+                    </li>
+                    <li class="inline">
+                        <img src="./assets/icons/xls.svg" alt="attachment icon">
+                        <div class="col">
+                            <div class="inline">
+                                <p>Data-Structure.xls</p>
+                                <p>12.4 MB</p>
+                                <button>Download</button>
+                            </div>
+                            <div>
+                                <p class="subtext opacity-5">Angela Hope</p>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

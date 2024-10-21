@@ -1,0 +1,14 @@
+.search-container {
+    @include structure(row);
+    padding:1rem;
+    background-color: map-get($colors, 'dark-grey');
+    border-bottom: 0.188rem solid map-get($colors, 'grey-text');
+    input {
+      border: none;
+      background-color: transparent;
+      outline: none;
+      margin-left: 0.75rem;
+      padding-right:7.875rem;
+     
+    }
+  }

@@ -1,0 +1,42 @@
+$breakpoints: (
+  sm: 360px,
+  md: 768px,
+  lg: 992px,
+);
+
+$gap: 1rem;
+
+
+.grid-container {
+  @include structure(column, flex-start, stretch);
+  padding: 1rem;
+  gap: $gap;
+  .sector{
+    @include structure(column, flex-start, stretch);
+    gap: $gap;
+  }
+
+  @media (min-width: map-get($breakpoints, md)) {
+    @include structure(row, stretch, flex-start);
+    gap: 1rem;
+    .sector {
+      @include structure(column, flex-start, stretch);
+      gap: $gap;
+      flex-wrap: wrap;
+      height: min-content;
+      flex: 1;
+     
+    }
+  
+  }
+
+}
+
+
+
+
+
+
+
+
+

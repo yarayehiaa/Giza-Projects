@@ -1,0 +1,21 @@
+aside{
+    background-color: map-get($colors, 'purple' );
+    width: 15%;
+    @include text(0.813rem, 'reg', 1.063rem);
+    ul{
+        padding-top: 3.75rem;
+        @include structure(column,flex-start,stretch);
+        gap:2.125rem;
+
+        li{
+            padding: 0.438rem 1.875rem;
+            
+        &:hover{
+            background-color: map-get($colors, 'dark-purple');
+            border-left: 0.313rem solid map-get($colors, 'coral');
+            font-family: map-get($fonts, 'bold');
+        }
+    }
+    }
+    
+}
