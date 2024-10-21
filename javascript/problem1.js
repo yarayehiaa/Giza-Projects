@@ -1,8 +1,8 @@
-function myFunc(string){
+function prePostFix(string){
    
 
-   let msg=  (string.length <= 3) ? 'String is too short' : string.slice(-3)+string+string.slice(-3);
-   return msg
+   let outputMsg=  (string.length <= 3) ? 'String is too short' : string.slice(-3)+string+string.slice(-3);
+   return outputMsg
 
 }
-console.log(myFunc('swift'));
+console.log(prePostFix('swift'));
