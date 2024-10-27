@@ -1,0 +1,111 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+.body {
+  font-size: 1rem;
+  font-weight: 900;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: map-get($colors, "white");
+}
+.inline {
+  @include structure(row, stretch, center);
+  flex-wrap: nowrap;
+  gap:0.5rem;
+}
+
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.row{
+  @include structure(row, stretch, center);
+  gap:3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+form {
+  @include structure(column, stretch, center);
+  gap:1rem;
+  
+}
+
+.wrapper {
+  @include structure(column, stretch, stretch);
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  width: 70%;
+}
+
+.padding-2{
+  padding: 2rem;
+}
+
+h1 {
+  @include text(2rem, 900,2rem);
+  color: map-get($colors, "black");
+  margin-bottom: 1rem;
+}
+main>p{
+  @include text(1rem, 900,1rem);
+
+}
+
+.flag{
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover !important;
+  height: 1.4rem !important;
+  width: 1.7rem !important;
+
+}
+
+.sp-between{
+  justify-content: space-between;
+}
+
+#greyspan{
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+}
+
+.btns{
+  button{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+
+    &:hover{
+      background-color: map-get($colors, "blue");
+      font-weight: 900;
+      border-radius: 5px;
+    }
+
+  }
+  
+}
+
+.ln-ht-2{
+  @include text(2rem, 900,2rem);
+}
+.fnt-wt-4{
+  font-weight: 400;
+}
+

@@ -57,16 +57,16 @@ request.onsuccess = function () {
     console.log("colourMakeQuery", colourMakeQuery.result);
   };
 
- /*  const deleteCar = store.delete(1); //minimize transactions to improve performance
+  const deleteCar = store.delete(1); //minimize transactions to improve performance
 
   deleteCar.onsuccess = function () {
     console.log("Red Toyota has been removed");
-  }; */
+  };
+ 
 
 
 
-
-  /* const redCarKey = colourIndex.getKey(["Red"]);
+   const redCarKey = colourIndex.getKey(["Red"]);
 
   redCarKey.onsuccess = function () {
     const deleteCar = store.delete(redCarKey.result);
@@ -74,18 +74,18 @@ request.onsuccess = function () {
     deleteCar.onsuccess = function () {
       console.log("Red car has been removed");
     };
-  }; */
+  };  
 
 
 
 
 
- /*  const seat = store.get(4);
+    const seat = store.get(4);
 
   seat.onsuccess = function () {
     seat.result.colour = "Green";
     store.put(seat.result);
-  }; */
+  };  
 
 
   
