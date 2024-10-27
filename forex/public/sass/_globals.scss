@@ -71,7 +71,7 @@ main>p{
   border-radius: 50%;
   background-position: center;
   background-size: cover !important;
-  height: 1.4rem !important;
+  height: 1.5rem !important;
   width: 1.7rem !important;
 
 }
@@ -99,13 +99,22 @@ main>p{
     }
 
   }
+  .active{
+    background-color: map-get($colors, "blue");
+    font-weight: 900;
+    border-radius: 5px;
+  }
   
 }
+
 
 .ln-ht-2{
   @include text(2rem, 900,2rem);
 }
 .fnt-wt-4{
   font-weight: 400;
+}
+.padding-05{
+  padding: 0.5rem;
 }
 

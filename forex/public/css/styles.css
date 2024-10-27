@@ -149,7 +149,7 @@ main > p {
   border-radius: 50%;
   background-position: center;
   background-size: cover !important;
-  height: 1.4rem !important;
+  height: 1.5rem !important;
   width: 1.7rem !important;
 }
 
@@ -173,6 +173,11 @@ main > p {
   font-weight: 900;
   border-radius: 5px;
 }
+.btns .active {
+  background-color: #DCEAFE;
+  font-weight: 900;
+  border-radius: 5px;
+}
 
 .ln-ht-2 {
   font-size: 2rem;
@@ -182,4 +187,8 @@ main > p {
 
 .fnt-wt-4 {
   font-weight: 400;
+}
+
+.padding-05 {
+  padding: 0.5rem;
 }/*# sourceMappingURL=styles.css.map */

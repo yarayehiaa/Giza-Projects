@@ -11,6 +11,7 @@ dropdown1.addEventListener('change',function(){
     flag.classList.replace(oldflag,newflag);
     country1=dropdown1.value;
     let list=document.getElementById('json-datalist2').options;
+    document.getElementById('firstCurrency').innerHTML=country1;
    
     for (let i = 0; i < list.length; i++) {
         if (list[i].value==country1){
@@ -33,6 +34,7 @@ dropdown2.addEventListener('change',function(){
     flag.classList.replace(oldflag,newflag);
     country2=dropdown2.value;
     let list=document.getElementById('json-datalist1').options;
+    document.getElementById('secondCurrency').innerHTML=country2;
     for (let i = 0; i < list.length; i++) {
         if (list[i].value==country2){
             list[i].style.display='none';
@@ -44,13 +46,13 @@ dropdown2.addEventListener('change',function(){
     return dropdown2.value;
 });
 
-/* if(country1&country2{
-    btns=document.getElementsByid('btns-wrapper').buttons;
-    for (let i = 0; i < btns.length; i++) {
-        if (btns[i].classList.contains('active')){
-            
-    }
-
-}) */
-
+function averageCalc(data,currentClose){
+    sum=0;
+    data.forEach(element => {
+  sum+=currentClose-element;
+      
+    });
+    return sum/data.length;
+  }
+  
     
