@@ -1,4 +1,9 @@
-
+const apiKey = API_KEY;
+const intervalDict = { "15M": "minute", "1H": "minute", "1D": "hourly" };
+const periodDict = { "15M": "5", "1H": "10", "1D": "2" };
+const currencyListCache = localStorage.getItem("currencyListCache")
+  ? JSON.parse(localStorage.getItem("currencyListCache"))
+  : {};
 
 window.onload = async function (e) {
   e.preventDefault();
@@ -51,11 +56,3 @@ function addData(label, newData,avg,country2) {
   
 }
 
-function averageCalc(data,currentClose){
-  sum=0;
-  data.forEach(element => {
-sum+=currentClose-element;
-    
-  });
-  return sum/data.length;
-}
