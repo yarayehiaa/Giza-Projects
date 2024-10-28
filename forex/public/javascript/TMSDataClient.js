@@ -1,10 +1,12 @@
 async function getTMSList() {
   try {
     if (!app.currencyListCache["available_currencies"]) {
+      //get or create pattern for idempotency
       const res = await axios.get(
         `https://marketdata.tradermade.com/api/v1/live_currencies_list?api_key=${app.apiKey}`
       );
-      app.currencyListCache["available_currencies"] = res.data.available_currencies;
+      app.currencyListCache["available_currencies"] =
+        res.data.available_currencies;
       localStorage.setItem(
         "currencyListCache",
         JSON.stringify(currencyListCache)
@@ -18,19 +20,7 @@ async function getTMSList() {
   }
 }
 
-async function getTMSData(e) {
-  siblingSwitcher(e, "active");
-  let currency1 = document.getElementById("currencyDropdown1").value;
-  let currency2 = document.getElementById("currencyDropdown2").value;
-  if (!currency1 || !currency2) {
-    alert("Please select both currencies");
-    e.classList.remove("active");
-  }
-  let currency = currency1 + currency2;
-  let baseurl = parameterHandler(e,currency);
-
-
-  
+async function getTMSData(baseurl, currency2) {
   try {
     const response = await axios.get(baseurl, {
       Headers: {
@@ -39,24 +29,8 @@ async function getTMSData(e) {
         "X-Content-Type-Options": "nosniff",
       },
     });
-    if (response.data.quotes.length == 0) {
-      alert("Data not available for this currency pair");
-      console.log(response);
-      addData([0], [0], [0], currency2);
-      return;
-    } else {
-      console.log(response);
-      let xValues = [];
-      let yValues = [];
-      let openValues = [];
-      response.data.quotes.forEach((element) => {
-        xValues.push(element.date);
-        yValues.push(element.close);
-        openValues.push(element.open);
-      });
-      let avg = averageCalc(openValues, yValues[yValues.length - 1]);
-      addData(xValues, yValues, avg, currency2);
-    }
+    responseHandler(response, currency2);
+    console.log('api called');
   } catch (error) {
     console.error(error);
     if (error.response.status == 401) {
@@ -68,5 +42,3 @@ async function getTMSData(e) {
     }
   }
 }
-
-

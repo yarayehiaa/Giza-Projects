@@ -18,10 +18,12 @@
         <div class="row">
             <div class="dropdowns">
                 <form>
-                    <input type="text" id="currencyDropdown1" list="json-datalist1" placeholder="Choose" class="padding-05">
+                    <input type="text" id="currencyDropdown1" list="json-datalist1" placeholder="Choose"
+                        class="padding-05">
                     <datalist class="currencyUl" id="json-datalist1"></datalist>
 
-                    <input type="text" id="currencyDropdown2" list="json-datalist2" placeholder="Choose" class="padding-05">
+                    <input type="text" id="currencyDropdown2" list="json-datalist2" placeholder="Choose"
+                        class="padding-05">
                     <datalist class="currencyUl" id="json-datalist2"></datalist>
                 </form>
             </div>
@@ -44,24 +46,25 @@
                     <canvas id="forexChart"></canvas>
                 </div>
                 <div class="btns center" id="btns-wrapper">
-                    <button type="button" id="btn1" onclick="getTMSData(this)">15M</button>
-                    <button type="button" id="btn2" onclick="getTMSData(this)">1H</button>
-                    <button type="button" id="btn3" onclick="getTMSData(this)">1D</button>
-                    <button type="button" id="btn4" onclick="getTMSData(this)">1W</button>
-                    <button type="button" id="btn5" onclick="getTMSData(this)">1M</button>
+                    <button type="button" id="btn1" class="intervalBtn">15M</button>
+                    <button type="button" id="btn2" class="intervalBtn">1H</button>
+                    <button type="button" id="btn3" class="intervalBtn">1D</button>
+                    <button type="button" id="btn4" class="intervalBtn">1W</button>
+                    <button type="button" id="btn5" class="intervalBtn">1M</button>
                 </div>
             </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
     <script src="../public/javascript/config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.7/underscore-min.js" integrity="sha512-dvWGkLATSdw5qWb2qozZBRKJ80Omy2YN/aF3wTUVC5+D1eqbA+TjWpPpoj8vorK5xGLMa2ZqIeWCpDZP/+pQGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/gh/enmaboya/symbols-of-currency@latest/dist/symbols-of-currency.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="../public/javascript/TMSDataClient.js"></script>
     <script src="../public/javascript/utils.js"></script>
     <script src="../public/javascript/index.js"></script>
-    
-    
+
+
 </body>
 
 </html>

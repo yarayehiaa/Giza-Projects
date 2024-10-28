@@ -64,47 +64,68 @@ function populateCurrencyDropdown(currencyList) {
   return 1;
 }
 
-function siblingSwitcher(e,className) {
-  siblings = e.parentElement.children;
+function siblingSwitcher(e, btns, className) {
+  siblings = btns;
   for (let i = 0; i < siblings.length; i++) {
     siblings[i].classList.remove(className);
   }
   e.classList.add(className);
 }
 
-function parameterHandler(e,currency){
-    let baseurl ;
-    if (e.innerText == "1W" || e.innerText == "1M") {
-      let endDate = moment().subtract(3, "hours"); //gmt offset for egypt and one day as data is not available realtime
-      let startDate = moment().subtract(3, "hours");
-      console.log(endDate);
-      startDate =
-        e.innerText == "1W"
-          ? startDate.subtract(7, "days").format("YYYY-MM-DD")
-          : startDate.subtract(1, "months").format("YYYY-MM-DD");
-      endDate = endDate.format("YYYY-MM-DD");
-      baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${app.apiKey}&start_date=${startDate}&end_date=${endDate}&format=records`;
-      console.log(startDate);
-      console.log(endDate);
-    } else {
-      let endDate = moment()
-        .subtract(3, "hours")
-        .subtract(3, "day")
-        .format("YYYY-MM-DD-HH:MM");
-      let startDate = moment().subtract(3, "hours").subtract(3, "day");
-      if (e.innerText == "15M") {
-        startDate = startDate.subtract(15, "minutes").format("YYYY-MM-DD-HH:MM");
-      } else if (e.innerText == "1H") {
-        startDate = startDate.subtract(1, "hours").format("YYYY-MM-DD-HH:MM");
-      } else if (e.innerText == "1D") {
-        startDate = startDate.subtract(1, "days").format("YYYY-MM-DD-HH:MM");
-      }
-      let interval = app.intervalDict[e.innerText];
-      let period = app.periodDict[e.innerText];
-      console.log(interval);
-      baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${app.apiKey}&start_date=${startDate}&end_date=${endDate}&format=records&interval=${interval}&period=${period}`;
-      console.log(baseurl);
+function parameterHandler(e, currency) {
+  let baseurl;
+  if (e.innerText == "1W" || e.innerText == "1M") {
+    let endDate = moment().subtract(3, "hours"); //gmt offset for egypt and one day as data is not available realtime
+    let startDate = moment().subtract(3, "hours");
+    console.log(endDate);
+    startDate =
+      e.innerText == "1W"
+        ? startDate.subtract(7, "days").format("YYYY-MM-DD")
+        : startDate.subtract(1, "months").format("YYYY-MM-DD");
+    endDate = endDate.format("YYYY-MM-DD");
+    baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${app.apiKey}&start_date=${startDate}&end_date=${endDate}&format=records`;
+    console.log(startDate);
+    console.log(endDate);
+  } else {
+    let endDate = moment()
+      .subtract(3, "hours")
+      .subtract(3, "day")
+      .format("YYYY-MM-DD-HH:MM");
+    let startDate = moment().subtract(3, "hours").subtract(3, "day");
+    if (e.innerText == "15M") {
+      startDate = startDate.subtract(15, "minutes").format("YYYY-MM-DD-HH:MM");
+    } else if (e.innerText == "1H") {
+      startDate = startDate.subtract(1, "hours").format("YYYY-MM-DD-HH:MM");
+    } else if (e.innerText == "1D") {
+      startDate = startDate.subtract(1, "days").format("YYYY-MM-DD-HH:MM");
     }
-  
-    return baseurl;
+    let interval = app.intervalDict[e.innerText];
+    let period = app.periodDict[e.innerText];
+    console.log(interval);
+    baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${app.apiKey}&start_date=${startDate}&end_date=${endDate}&format=records&interval=${interval}&period=${period}`;
+    console.log(baseurl);
   }
+
+  return baseurl;
+}
+
+function responseHandler(response, currency2) {
+  if (response.data.quotes.length == 0) {
+    alert("Data not available for this currency pair");
+    console.log(response);
+    addData([0], [0], [0], currency2);
+    return;
+  } else {
+    let xValues = [];
+    let yValues = [];
+    let openValues = [];
+    response.data.quotes.forEach((element) => {
+      xValues.push(element.date);
+      yValues.push(element.close);
+      openValues.push(element.open);
+    });
+    let avg = averageCalc(openValues, yValues[yValues.length - 1]);
+    addData(xValues, yValues, avg, currency2);
+  }
+}
+
