@@ -1,9 +1,9 @@
-const apiKey = API_KEY;
-const intervalDict = { "15M": "minute", "1H": "minute", "1D": "hourly" };
-const periodDict = { "15M": "5", "1H": "10", "1D": "2" };
-const currencyListCache = localStorage.getItem("currencyListCache")
-  ? JSON.parse(localStorage.getItem("currencyListCache"))
-  : {};
+const app={
+  apiKey: API_KEY,
+  intervalDict: { "15M": "minute", "1H": "minute", "1D": "hourly" },
+  periodDict: { "15M": "5", "1H": "10", "1D": "2" },
+ currencyListCache: localStorage.getItem("currencyListCache")? JSON.parse(localStorage.getItem("currencyListCache")):{},
+}
 
 window.onload = async function (e) {
   e.preventDefault();
@@ -49,10 +49,10 @@ function addData(label, newData,avg,country2) {
       },
     },
   });
-  
+  standardDeviation=avg*100/newData[newData.length - 1];
   symbol=soc.getSymbolByCode(country2);
   document.getElementById("currentPrice").innerHTML = symbol+" "+newData[newData.length - 1];
-  document.getElementById("average").innerHTML = avg+" ("+avg*100/newData[newData.length - 1]+"%)";
+  document.getElementById("average").innerHTML = avg+" ("+standardDeviation+"%)";
   
 }
 

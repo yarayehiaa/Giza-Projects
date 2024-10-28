@@ -52,7 +52,6 @@ function averageCalc(data, currentClose) {
 }
 
 function populateCurrencyDropdown(currencyList) {
-  console.log("populateCurrencyDropdown");
   const currencyDropdowns = document.getElementsByClassName("currencyUl");
   for (let i = 0; i < currencyDropdowns.length; i++) {
     Object.entries(currencyList).forEach(([key, value]) => {
@@ -84,7 +83,7 @@ function parameterHandler(e,currency){
           ? startDate.subtract(7, "days").format("YYYY-MM-DD")
           : startDate.subtract(1, "months").format("YYYY-MM-DD");
       endDate = endDate.format("YYYY-MM-DD");
-      baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${apiKey}&start_date=${startDate}&end_date=${endDate}&format=records`;
+      baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${app.apiKey}&start_date=${startDate}&end_date=${endDate}&format=records`;
       console.log(startDate);
       console.log(endDate);
     } else {
@@ -100,10 +99,10 @@ function parameterHandler(e,currency){
       } else if (e.innerText == "1D") {
         startDate = startDate.subtract(1, "days").format("YYYY-MM-DD-HH:MM");
       }
-      let interval = intervalDict[e.innerText];
-      let period = periodDict[e.innerText];
+      let interval = app.intervalDict[e.innerText];
+      let period = app.periodDict[e.innerText];
       console.log(interval);
-      baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${apiKey}&start_date=${startDate}&end_date=${endDate}&format=records&interval=${interval}&period=${period}`;
+      baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${app.apiKey}&start_date=${startDate}&end_date=${endDate}&format=records&interval=${interval}&period=${period}`;
       console.log(baseurl);
     }
   
