@@ -89,19 +89,22 @@ function parameterHandler(e, currency) {
   } else {
     let endDate = moment()
       .subtract(3, "hours")
-      .subtract(3, "day")
-      .format("YYYY-MM-DD-HH:MM");
-    let startDate = moment().subtract(3, "hours").subtract(3, "day");
+      .subtract(1, "day")
+      .format("YYYY-MM-DD-HH:mm");
+    let startDate = moment().subtract(3, "hours").subtract(1, "day");
     if (e.innerText == "15M") {
-      startDate = startDate.subtract(15, "minutes").format("YYYY-MM-DD-HH:MM");
+      startDate = startDate.subtract(15, "minutes").
+      startDate=startDate.format("YYYY-MM-DD-HH:mm");
     } else if (e.innerText == "1H") {
-      startDate = startDate.subtract(1, "hours").format("YYYY-MM-DD-HH:MM");
+      startDate = startDate.subtract(1, "hours").format("YYYY-MM-DD-HH:mm");
     } else if (e.innerText == "1D") {
-      startDate = startDate.subtract(1, "days").format("YYYY-MM-DD-HH:MM");
+      startDate = startDate.subtract(1, "day").format("YYYY-MM-DD-HH:mm");
     }
     let interval = app.intervalDict[e.innerText];
     let period = app.periodDict[e.innerText];
-    console.log(interval);
+    console.log(startDate);
+    console.log(endDate);
+
     baseurl = `https://marketdata.tradermade.com/api/v1/timeseries?currency=${currency}&api_key=${app.apiKey}&start_date=${startDate}&end_date=${endDate}&format=records&interval=${interval}&period=${period}`;
     console.log(baseurl);
   }
