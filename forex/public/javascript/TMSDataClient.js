@@ -1,18 +1,21 @@
+const currencyListCache= localStorage.getItem("currencyListCache")
+? JSON.parse(localStorage.getItem("currencyListCache"))
+: {};
 async function getTMSList() {
   try {
-    if (!app.currencyListCache["available_currencies"]) {
+    if (!currencyListCache["available_currencies"]) {
       //get or create pattern for idempotency
       const res = await axios.get(
         `https://marketdata.tradermade.com/api/v1/live_currencies_list?api_key=${app.apiKey}`
       );
-      app.currencyListCache["available_currencies"] =
+      currencyListCache["available_currencies"] =
         res.data.available_currencies;
       localStorage.setItem(
         "currencyListCache",
         JSON.stringify(currencyListCache)
       );
     }
-    populateCurrencyDropdown(app.currencyListCache["available_currencies"]);
+    populateCurrencyDropdown(currencyListCache["available_currencies"]);
   } catch (error) {
     console.log(error);
     alert("Server seems to be down, please try again later");

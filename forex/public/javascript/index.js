@@ -2,9 +2,7 @@ const app = {
   apiKey: API_KEY,
   intervalDict: { "15M": "minute", "1H": "minute", "1D": "hourly" },
   periodDict: { "15M": "5", "1H": "10", "1D": "2" },
-  currencyListCache: localStorage.getItem("currencyListCache")
-    ? JSON.parse(localStorage.getItem("currencyListCache"))
-    : {},
+ 
 };
 
 window.onload = async function (e) {
