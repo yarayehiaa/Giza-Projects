@@ -1,0 +1,217 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins;
+  color:map-get($colors, 'black'); 
+}
+.body {
+  font-size: 16px;
+  
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.inline {
+  @include structure(row, space-between, center);
+  flex-wrap: nowrap;
+}
+
+.left{
+  margin-left: auto!important;
+}
+
+.block {
+  @include structure(column, stretch, stretch);
+  flex-wrap: nowrap;
+  gap: 1rem;
+  flex: 2;
+}
+
+.aquaspan{
+  padding:0.2rem 0.4rem;
+  border-radius: 40px;
+  background-color: rgba($color: #08A0F7, $alpha: 0.2);
+}
+
+.card {
+  padding: 1rem;
+  box-shadow: 0px 30px 60px 0px #20385526;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  height: min-content;
+  @include text(0.75rem, 500, 1.2rem);
+  transition: transform 0.3s, box-shadow 0.3s;
+  @media (min-width: 756px) {
+    min-width: fit-content;
+    @include text(1rem, 500, 1.5rem);
+  }
+}
+.card:hover {
+  box-shadow: 0px 30px 60px 0px #20385526;
+  transform: translateY(-10px);
+}
+
+h2 {
+  letter-spacing: 0.30000001192092896px;
+  text-align: left;
+  @include text(0.938rem, 500, 1.438rem);
+  margin-bottom: 1rem;
+  @media (min-width: 756px) {
+    @include text(1.25rem, 500, 1.875rem);
+  }
+}
+.opacity-6 {
+  opacity: 0.6;
+}
+
+.opacity-2 {
+  opacity: 0.2;
+}
+
+.opacity-5 {
+  opacity: 0.5;
+}
+
+.desktop {
+  display: none;
+}
+
+.profilepic {
+  border-radius: 50%;
+  width: 2rem;
+}
+
+.search-container {
+  @include structure(row);
+  border-radius: 16px;
+  padding: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0;
+  margin: 0 0.5rem;
+  background-color: #f5f5f5;
+  flex-grow: 1;
+  input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    margin-left: 0.5rem;
+  }
+}
+
+// custom checkmark 
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 1rem;
+  
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  background-color: #eee;
+  border-radius: 50%;
+  background: rgba($color: #08A0F7, $alpha: 0.06);
+  border: 1px solid map-get($colors, 'aqua' ) !important;
+
+}
+
+.container input:checked ~ .checkmark {
+  background-color: map-get($colors, 'aqua' );
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.container .checkmark:after {
+  left: 0.75rem;
+  top: 0.6rem;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+//progress bar
+
+
+.wrapper {
+
+  display: flex;
+  justify-content: flex-start;
+  height: 0.5rem;
+}
+
+.background {
+ 
+    height: inherit;
+    border-radius: 0px 8px 8px 0;
+    width: 100%;
+    background:map-get($colors, 'green-shadow' );
+    opacity: 0.3;
+}
+
+.bar {
+  border-radius: 8px 8px 8px 8px;
+    animation-duration: 3s;
+    animation-name: growup;
+    animation-iteration-count: infinite;
+    height: inherit;
+    background: map-get($colors, 'green' );
+    opacity: 1;
+}
+
+ @keyframes growup {
+    from {
+      width: 0%;
+    }
+    
+    to {
+      width: 100%;
+    }
+  }
+
+
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Currency Exchange">
+    <title>Currency Exchange | Forex</title>
+    <link rel="stylesheet" href="../public/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/currency-flags/2.1.2/currency-flags.min.css" />
+
+</head>
+
+<body>
+    <main class="padding-2">
+        <h1>Forex Exchange</h1>
+        <p class="grey">Checkout the current price for a currency pair</p>
+        <div class="row">
+            <div class="dropdowns">
+                <form>
+                    <input type="text" id="currencyDropdown1" list="json-datalist1" placeholder="Choose"
+                        class="padding-05">
+                    <datalist class="currencyUl" id="json-datalist1"></datalist>
+
+                    <input type="text" id="currencyDropdown2" list="json-datalist2" placeholder="Choose"
+                        class="padding-05">
+                    <datalist class="currencyUl" id="json-datalist2"></datalist>
+                </form>
+            </div>
+            <div class="wrapper">
+                <div class="inline">
+                    <span class="currency-flag currency-flag-eur flag" id="flag1"></span>
+                    <span class="currency-flag currency-flag-usd flag" id="flag2"></span>
+                    <span class="lt-grey-bg grey" id="greyspan">
+                        <p>Forex.com</p>
+                    </span>
+                </div>
+                <div class="inline sp-between ln-ht-2">
+                    <p><span id="firstCurrency">EUR</span>/<span id="secondCurrency">USD</span></p>
+                    <p class="left fnt-wt-4" id="currentPrice">$ 0</p>
+                </div>
+                <div class="green">
+                    <p class="right" id="average">0 (0%)</p>
+                </div>
+                <div class="chart">
+                    <canvas id="forexChart"></canvas>
+                </div>
+                <div class="btns center" id="btns-wrapper">
+                    <button type="button" id="btn1" class="intervalBtn">15M</button>
+                    <button type="button" id="btn2" class="intervalBtn">1H</button>
+                    <button type="button" id="btn3" class="intervalBtn">1D</button>
+                    <button type="button" id="btn4" class="intervalBtn">1W</button>
+                    <button type="button" id="btn5" class="intervalBtn">1M</button>
+                </div>
+            </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script src="../public/javascript/config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.7/underscore-min.js" integrity="sha512-dvWGkLATSdw5qWb2qozZBRKJ80Omy2YN/aF3wTUVC5+D1eqbA+TjWpPpoj8vorK5xGLMa2ZqIeWCpDZP/+pQGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/enmaboya/symbols-of-currency@latest/dist/symbols-of-currency.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="../public/javascript/TMSDataClient.js"></script>
+    <script src="../public/javascript/utils.js"></script>
+    <script src="../public/javascript/index.js"></script>
+
+
+</body>
+
+</html>

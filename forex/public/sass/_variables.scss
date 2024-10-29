@@ -1,0 +1,17 @@
+$colors: ('white':#fff,'black':#000,'grey-border':#D9DDE1,'green':#45D6A5,'grey':#707785,
+'lt-grey':#F3F5F7,'blue':#DCEAFE);
+
+
+
+
+@each $name, $color in $colors {
+    .#{$name} {
+      color: $color;
+    }
+  }
+
+  @each $name, $color in $colors {
+    .#{$name}-bg {
+      background-color: $color;
+    }
+  }

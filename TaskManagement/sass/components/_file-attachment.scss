@@ -1,0 +1,50 @@
+#file-attachment {
+  button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    :hover {
+      color: map-get($colors, "aqua");
+    }
+  }
+
+  ul {
+    li {
+      gap: 1rem;
+      .col {
+        width: 100%;
+      }
+
+      @include text(0.7rem, 500, 1rem);
+      justify-content: stretch;
+      text-wrap: nowrap;
+      .inline {
+    
+       
+       
+      }
+      .background {
+        background: map-get($colors, "blue-shadow");
+      }
+      .bar {
+        background: map-get($colors, "aqua");
+      }
+      .wrapper {
+        margin-top: 0.5rem;
+      }
+    }
+    li + li {
+      margin-top: 1rem;
+    }
+  }
+  @media (min-width: map-get($breakpoints, md)) {
+    ul {
+      li {
+        @include text(0.8rem, 500, 1.5rem);
+        .inline {
+          gap: 2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+footer{
+    text-align: right;
+    padding: 4.75rem 1.25rem;
+    font-family: 'Lama Sans-thin';
+    .col1{
+        margin-bottom:2.75rem;
+        .logo{
+            margin-bottom: 1.75rem;
+        }
+        p{
+            @include text(1.125rem, 500, 2rem);
+        }
+    }
+    .row{
+        @include structure(row-reverse, stretch, flex-start);
+        flex-grow: 1;
+        flex-wrap: wrap;
+        width:100%;
+        a{
+            color:map-get($colors, 'body-grey');
+          
+        }
+        .col{
+            @include structure(column, flex-start, flex-end);
+            gap:1.25rem;
+            width:50%;
+            h5{
+                margin-top: 1rem;
+                @include text(1.25rem, 900, 1.25rem);
+            }
+        }
+       
+       
+       
+    }
+    hr{
+        margin: 2.5rem 0;
+    }
+    .inline{
+       justify-content: flex-start;
+       margin-top: 1.75rem;
+    }
+    .ender {
+        p{
+            @include text(0.9rem, 300, 1.8rem);
+        }
+    }
+    @media screen and (min-width: 75rem) {
+       padding:1.063rem 3.75rem;
+       padding-top: 5.875rem;
+       hr{
+           margin: 1.5rem 0;
+       }
+       .footer-inline{
+           @include structure(row-reverse, stretch, center);
+              gap: 5.813rem;
+           .col1{
+               flex:2
+           }
+           .row{
+               flex:4;
+               flex-wrap: nowrap;
+               
+           }
+          
+       }
+       .ender{
+          @include structure(row-reverse, space-between, center);
+          .inline{
+              margin-top: 0;
+          }
+       }
+      
+    }
+}

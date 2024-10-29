@@ -1,0 +1,48 @@
+.locations {
+  text-align: right;
+  margin-right: 1.25rem;
+  .caraousel {
+    @include structure(row-reverse, space-between, center);
+    gap: 1.25rem;
+    overflow-x: auto;
+    height: max-content;
+    padding-bottom: 7rem;
+    .caraousel-item {
+      @include structure(column, center, center);
+      img {
+        width: 14.688rem;
+        max-height: 23.125rem;
+        @media screen and (min-width: 75rem) {
+          width: 23.75rem;
+          max-height: 37.5rem;
+          
+        }
+      }
+      .caraousel-card {
+        margin-top: -5rem;
+        background-color: white;
+        padding-bottom: 1rem;
+        padding-top: 1.313rem;
+        padding-right: 0.75rem;
+        border-radius: 16px;
+      }
+
+      h5 {
+        @include text(1rem, 900, 1rem);
+      }
+      p {
+        @include text(0.75rem, 200, 0.75rem);
+      }
+    }
+  }
+  @media screen and (min-width: 75rem) {
+    margin: 0 3.75rem;
+    padding-top: 6.938rem;
+    .caraousel{
+      gap:1.75rem;
+    }
+   
+ 
+    
+  }
+}

@@ -1,0 +1,24 @@
+$colors: ('blue': #7784EE,'white':#fff,'black': #121212,'text-blue':#1778B0,'aqua':#08A0F7,'grey':#ECECEC,
+'subtext':#41475E,'green': #46BD84,'green-shadow': #34A770,'purple':#D459E8,'purple-shadow':#9D1CB2,);
+
+
+
+
+@each $name, $color in $colors {
+    .#{$name} {
+      color: $color;
+    }
+  }
+
+@mixin structure($flex-direction, $justify-content:stretch, $align-items:center){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin text($font-size, $font-weight, $line-height) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}

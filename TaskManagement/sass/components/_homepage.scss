@@ -1,0 +1,35 @@
+#homepage{
+    gap:0.5rem;
+    >img{
+        width:1.2rem;
+    }
+    h2{
+        margin-top:-0.5rem;
+    }
+    .inline{
+        justify-content: stretch;
+        gap:1rem;
+        @include text(0.7rem, 400, 1rem);
+    }
+    .project-assignees{
+        justify-content: flex-start;
+        gap:0;
+        .profilepic{
+            border: 1px solid white;
+        }
+        .profilepic + .profilepic{
+            margin-left:-0.5rem;
+        }
+        p{
+            margin-left: 0.2rem;
+        }
+    }
+    .bar{
+       
+        max-width: 32%;
+    }
+
+   
+        
+     
+}

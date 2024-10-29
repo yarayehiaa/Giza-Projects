@@ -1,0 +1,32 @@
+
+.dropdown{
+
+  position: relative;
+  display: inline-block;
+.dropbtn {
+  
+  display: flex;
+  border: none;
+  background-color: map-get($colors, 'dark-grey');
+  padding: 1rem;
+  @include text(1rem, 'bold', 1.2rem);
+  img{
+    margin-left:11rem;
+  }
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  right:0;
+}
+
+
+&:hover .dropdown-content {display: block;}
+}

@@ -1,0 +1,61 @@
+#weekly-progress {
+  .progress-bar {
+    margin: 2rem auto;
+    .progress-text {
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: -140px;
+      #percentage{
+        @include text(2rem, 700, 2.5rem);
+      }
+    }
+  }
+  .circular-progress {
+    --size: 200px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 20px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((var(--progress) * var(--circumference)) / 100);
+    animation: progress-animation 4s linear 0s 1 forwards;
+    animation-iteration-count: infinite;
+  }
+
+  .circular-progress circle {
+    cx: var(--half-size);
+    cy: var(--half-size);
+    r: var(--radius);
+    fill: none;
+    stroke-linecap: round;
+  }
+
+  .circular-progress circle.bg {
+    stroke: map-get($colors, "grey");
+    opacity: 0.6;
+    stroke-width: 10px;
+  }
+
+  .circular-progress circle.fg {
+    transform: rotate(-90deg);
+    stroke-width: 15px;
+    transform-origin: var(--half-size) var(--half-size);
+    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+    transition: stroke-dasharray 0.3s linear 0s;
+    stroke: map-get($colors, "green");
+  }
+
+  @property --progress {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+  }
+
+  @keyframes progress-animation {
+    from {
+      --progress: 0;
+    }
+    to {
+      --progress: 75;
+    }
+  }
+}

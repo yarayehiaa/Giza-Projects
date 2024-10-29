@@ -1,0 +1,75 @@
+#dropdown {
+  @include structure(row, flex-start, center);
+  gap: 1rem;
+  pointer-events: none;
+  .dropbtn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+  }
+  p {
+    @include text(0.938rem, 500, 1.438rem);
+  }
+
+  .dropdown {
+    margin-left: auto;
+    pointer-events: auto;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    border: 0;
+    width: 100%;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content {
+    @include structure(column, flex-start, stretch);
+    gap: 1rem;
+    padding: 1rem;
+    right: 0;
+    top: 4rem;
+    .search-container {
+      padding: 0;
+      margin: 0;
+    }
+  }
+    .dropdown-item {
+      @include structure(row, flex-start, center);
+      text-wrap: nowrap;
+      gap: 1rem;
+      h4 {
+        @include text(0.7rem, 500, 0.5rem);
+      }
+      p {
+        @include text(0.6rem, 500, 1.2rem);
+        margin-left: auto;
+      }
+    }
+
+  &:hover {
+    margin-bottom: 15rem;
+  }
+  @media (min-width: map-get($breakpoints, md)) {
+    .dropdown-item {
+      @include structure(row, flex-start, center);
+      text-wrap: nowrap;
+      gap: 1rem;
+      h4 {
+        @include text(1rem, 500, 0.5rem);
+      }
+      .subtext {
+        @include text(0.6rem, 500, 1.2rem);
+        margin-left: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    list-style: none;
+}
+
+.inline{
+    @include structure(row-reverse, center, center);
+    gap:0.813rem;
+}
+
+h4{
+    @include text(1rem, 900, 1rem);
+    margin-bottom: 0.75rem;
+}
+h2{
+    @include text(1.5rem, 900, 1.5rem);
+    margin-bottom: 3rem;
+}
+
+.logo a{
+    @include text(1.875rem, 900, 1.875rem);
+}
+
+@media screen and (min-width: 75rem) {
+    h4{
+        @include text(1.5rem, 900, 1.5rem);
+    }
+    h2{
+        @include text(3rem, 900, 3rem);
+    }
+    
+}

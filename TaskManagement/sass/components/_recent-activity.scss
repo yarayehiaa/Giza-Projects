@@ -1,0 +1,28 @@
+#recent-activity{
+    h2{
+        @include text(1.2rem, 500, 1.5rem);
+        margin-bottom: 1rem;
+    }
+    ul{
+        li{
+            @include structure(row, stretch, flex-start);
+            @include text(0.7rem, 400, 1.2rem);
+            gap:1rem;
+            .bold{
+                @include text(0.7rem, 600, 1.2rem);
+            }
+        }
+        li+li{
+            margin-top:1rem;
+        }
+    }
+    @media (min-width: map-get($breakpoints, md)) {
+        ul{
+        li{
+        @include text (1rem, 400, 1.5rem);
+        .bold{
+            @include text(1rem, 600, 1.5rem);}
+        }
+      }
+    }
+}

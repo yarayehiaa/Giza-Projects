@@ -1,0 +1,44 @@
+
+$colors: ('yellow':#FEC430,'heading-grey':#A5A5A5,'black':#191919,'body-grey':#797979,'card-grey':#4C4C4C,'pink':#FFE7AC,'purple':#46368B,'card-bg-grey':#F1EFFD,'white':#fff);
+@font-face {
+  font-family: 'Lama Sans-thin';
+  src: url(../assets/lama-sans-webfont/LamaSans-RegularExpanded.woff);
+}
+@font-face {
+  font-family: 'Lama Sans';
+  src: url(../assets/lama-sans-webfont/LamaSans-BoldExpanded.woff);
+}
+
+@each $name, $color in $colors {
+  .#{$name} {
+    color: $color;
+  }
+}
+
+@each $name, $color in $colors {
+    .#{$name}-bg {
+      background-color: $color;
+    }
+  }
+
+
+
+  @mixin structure($flex-direction, $justify-content, $align-items:center){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin button($color, $bg-color, $border){
+    @include structure(row-reverse, center, center);
+    font-family: 'Lama Sans' !important;
+    gap:0.75rem;
+    background-color: $bg-color;
+    border: $border;
+    border-radius: 15px;
+    padding: 0.75rem 4.5rem;
+    @include text(1.06rem, 300, 1.5rem);
+    cursor: pointer;
+    color: $color;
+}

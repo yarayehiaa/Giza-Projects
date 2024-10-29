@@ -1,0 +1,76 @@
+.payment-plans {
+  text-align: right;
+  margin: 0 1.25rem;
+  margin-bottom: 4.75rem;
+  hr {
+    border: 1px solid map-get($colors, "card-grey");
+    margin: 2rem 0;
+  }
+  #purple-card {
+    hr {
+      border: 1px solid map-get($colors, "heading-grey");
+    }
+    button {
+      @include button(
+        map-get($colors, "white"),
+        map-get($colors, "purple"),
+        1px solid map-get($colors, "white")
+      );
+    }
+  }
+
+  .plans {
+    @include structure(column, center, center);
+    gap: 2.5rem;
+    .plan {
+      border-radius: 25px;
+      border: 1.5px solid map-get($colors, "black");
+      padding: 2.25rem 1.5rem;
+      box-shadow: 10px 10px 0px 0px #000000;
+      h5 {
+        text-wrap: nowrap;
+        @include text(1.5rem, 900, 1.5rem);
+        margin-bottom: 1rem;
+        @include structure(row, flex-end, center);
+        span {
+          @include text(2.25rem, 900, 2.25rem);
+        }
+      }
+      p {
+        font-family: "Lama Sans-thin";
+      }
+      li + li {
+        margin-top: 0.5rem;
+      }
+      li {
+        background-image: url(../assets/navigators/check-icon.svg);
+        background-repeat: no-repeat;
+        padding: 0.5rem 0;
+        background-position: center right;
+        padding-right: 1.7rem;
+        font-family: "Lama Sans-thin";
+        @include text(0.8rem, 600, 1rem);
+      }
+      button {
+        margin-top: 2.75rem;
+        @include button(
+          map-get($colors, "black"),
+          map-get($colors, "pink"),
+          1px solid map-get($colors, "black")
+        );
+      }
+    }
+  }
+  @media screen and (min-width: 75rem) {
+    .plans {
+      margin: 0 3.75rem;
+      margin-top: 6.938rem;
+
+      @include structure(row-reverse, space-between, center);
+    }
+    #purple-card {
+      margin-top: -2.938rem;
+      
+    }
+  }
+}

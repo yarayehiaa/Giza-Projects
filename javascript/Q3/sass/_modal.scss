@@ -1,0 +1,51 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 30%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 1rem 1rem map-get($colors, "shadow");
+
+  .modal-content {
+    background-color: map-get($colors, "white");
+    margin: auto;
+    padding: 1.25rem;
+    border: 1px solid map-get($colors, "black");
+    width: 80%;
+
+    .close {
+      color: map-get($colors, "green");
+      float: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: map-get($colors, "red");
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    form {
+      @include structure(column, flex-start, flex-start);
+
+      label {
+        color: rgba($color: map-get($colors, "grey-heading"), $alpha: 0.5);
+        margin-top: 1rem;
+      }
+      #formBtn {
+        margin-top: 1rem;
+        background-color: map-get($colors, "green");
+        color: map-get($colors, "white");
+        padding: 0.5rem 1rem;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

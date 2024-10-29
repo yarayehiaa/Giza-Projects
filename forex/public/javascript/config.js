@@ -1,0 +1,1 @@
+const API_KEY="A2SPiW3bUL4GSomrOofD"; //.env imitator
